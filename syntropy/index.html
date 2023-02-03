@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Syntropy</title>
+        <script src="https://kit.fontawesome.com/a48d72efee.js" crossorigin="a48d72efee"></script>
+        <meta name="description" content="Syntropy function test">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/web3.min.js"></script>
+        <script src="js/truffle-contract.js"></script>
+        <script src="js/app.js"></script> 
+        <script src="./js/buttonActive.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="navBar">
+                <div class="logoNavBar">
+                    <img src="./img/STRPY-LOGO.png">
+                </div>
+                    <menu class="menuNavBar">
+                        <li class="liNavBar">
+                            <button onclick="buttonActive(1)" type="button" class="menuActive" id="SolUSDLink">
+                                <div class="linksNavBar">
+                                    <span><i class="fa-solid fa-wallet"></i></span>
+                                    <span>SolUSD</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="liNavBar">
+                            <button onclick="buttonActive(2)" type="button" class="menu" id="BorderFactoryLink">
+                                <div class="linksNavBar">
+                                    <span><i class="fa-solid fa-sitemap"></i></span>
+                                    <span>Border Factory</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="liNavBar">
+                            <button onclick="buttonActive(3)" type="button" class="menu" id="MovimentFactoryLink">
+                                <div class="linksNavBar">
+                                    <span><i class="fa-solid fa-diagram-project"></i></span>
+                                    <span>Moviment Factory</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="liNavBar">
+                            <button onclick="buttonActive(4)" type="button" class="menu" id="BordersLink">
+                                <div class="linksNavBar">
+                                    <span><i class="fa-solid fa-border-top-left"></i></span>
+                                    <span>Borders</span>
+                                </div>
+                            </a> 
+                        </li>
+                        <li class="liNavBar">
+                            <button onclick="buttonActive(5)" type="button" class="menu" id="MovimentsLink">
+                                <div class="linksNavBar">
+                                    <span><i class="fa-solid fa-wind"></i></span>
+                                    <span>Moviments</span>
+                                </div>
+                            </a>
+                        </li>
+                    </menu>
+                <div>
+                    <br/>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="contentMain" id="solUsd">
+                <h1>SolUSD</h1>
+                <h2><b>Balance:</b> <span class="highLight" id="SolUSDBalance"></span><span>USD</span></h2>
+                <div class="contentUSD">
+                    <p class="contentTitle"><b>Mint</b></p><input type="text" class="form-control" id="SolUSDMintAddress" placeholder="To address" />
+                    <input type="text" class="form-control" id="SolUSDMintAmount" placeholder="Amount" />
+                    <button class="btnDarkSmall" id="solUSDMintButton" type="button">Transfer</button>                  
+                    <p>Transfer</p> <input type="text" class="form-control" id="SolUSDTransferAddress" placeholder="To Address" />
+                    <input type="text" class="form-control" id="SolUSDTransferAmount" placeholder="Amount" />
+                    <button class="btnDarkSmall" id="solUSDTransferButton" type="button">Transfer</button>
+                    <p>Approve</p> <input type="text" class="form-control" id="SolUSDApproveAddress" placeholder="To Address" />
+                    <input type="text" class="form-control" id="SolUSDApproveAmount" placeholder="Amount"/>
+                    <button class="btnDarkSmall" id="solUSDApproveButton" type="button">Transfer</button>
+                </div>
+            </div>
+            <div class="contentMain" id="borderFactory">
+                <h1>Border Factory</h1>
+                <h2><b>Borders:</b> <span class="highLight" id="ListBorders"></span></h2>
+                <div class="borderFactory">
+                    <p class="contentTitle"><b>Create:</b></p> <input type="text" class="form-control" id="BorderFactoryCreateName" placeholder="Border Name" />
+                    <input type="text" class="form-control" id="BorderFactoryCreateTokenName" placeholder="Token Border Name" />
+                    <input type="text" class="form-control" id="BorderFactoryCreateTokenSymbol" placeholder="Token Border Symbol" /></td>
+                    <button class="btnDarkSmall" id="borderFactoryCreateButton" type="button">Create</button>
+                </div>
+            </div>
+            <div class="contentMain" id="movimentFactory">
+                <h1>Moviment Factory</h1>
+                <h2><b>Moviments:</b> <span class="highLight" id="ListMoviments"></span></h2>
+                <div class="movimentFactory">
+                    <p class="contentTitle">Name:</p> <input type="text" class="form-control" id="MovimentFactoryCreateName" placeholder="Moviment Name" />
+                    <button class="btnDarkSmall" id="movimentFactoryCreateButton" type="button">Create</button>
+                </div>
+            </div>
+
+            <div class="contentMain" id="moviments">
+                <div class="moviments">
+                    <h1>Moviments</h1>
+                    <h2>Address:</h2><span id="MovimentAddress"></span>
+                    <h2>Name:</h2> <span id="MovimentName"></span>
+                    <h2>Owners:</h2> <span id="ListMovimentOwners"></span>
+                    <h2>Borders:</h2> <span id="ListMovimentBorders"></span>
+                    
+                        <div class="contentTopics">
+                            <h2>Set Ratio Owner</h2>
+                            <div class="items">
+                                <p class="contentTitle">To:</p>
+                                <input type="text" class="form-control" id="MovimentSetRatioOwnerTo" placeholder="address to permanent transfer" />
+                                <p class="contentTitle">Percentage:</p>
+                                <input type="text" class="form-control" id="MovimentSetRatioOwnerPerc" placeholder="% with 00, exemple 40% = 4000" />
+                            </div>
+                                <button class="btnDarkSmall" id="movimentSetRatioOwnerButton" type="button">Set Ratio Owner</button>
+                        </div>
+                        <div class="contentTopics">
+                            <h2>Set Ratio Share</h2>
+                            <div class="items">
+                                <p class="contentTitle">From:</p>
+                                <input type="text" class="form-control" id="MovimentSetRatioShareFrom" placeholder="address from share (temporarily)" />
+                                <p class="contentTitle">To:</p>
+                                <input type="text" class="form-control" id="MovimentSetRatioShareTo" placeholder="address to share (temporarily)" />
+                                <p class="contentTitle">Percentage:</p>
+                                <input type="text" class="form-control" id="MovimentSetRatioSharePerc" placeholder="% with 00, exemple 25,50% = 2550" />
+                            </div>
+                            <div>
+                                <button class="btnDarkSmall" id="movimentSetRatioShareButton" type="button">Set Ratio Share</button>
+                            </div>
+                        </div>
+                    
+                        <div class="contentTopics">
+                            <h2>Report Incoming</h2>
+                            <div class="items">
+                            <p class="contentTitle">Total Value:</p>
+                            <input type="text" class="form-control" id="MovimentReportIncomingValue" placeholder="total value entry" />
+                            <p class="contentTitle">Description:</p> 
+                            <input type="text" class="form-control" id="MovimentReportIncomingDescription" placeholder="text description" />
+                            <button class="btnDarkSmall" id="movimentReportIncomingButton" type="button">Report</button>
+                            </div>
+                                <p class="contentTitle">Events:</p><span id="movimentReportIncomingEvents"></span>
+                            </div>
+                        </div>
+
+                        <div class="contentTopics">
+                            <h2>Border Incoming</h2>
+                            <div class="items">
+                            <p class="contentTitle">Total Value:</p>
+                            <input type="text" class="form-control" id="MovimentBorderIncomingTotal" placeholder="total value entry" />
+                            <p class="contentTitle">Border Value:</p>
+                            <input type="text" class="form-control" id="MovimentBorderIncomingBorderValue" placeholder="border value" />
+                            <button class="btnDarkSmall" id="movimentBorderIncomingButton" type="button">Report</button>
+                            </div>
+                                <p class="contentTitle">Events:</p> <span id="movimentBorderIncomingEvents"></span></p>
+                            </div>
+                        </div>
+                </div>     
+
+                <div class="contentMain" id="borders">
+                    <div class="borders">
+                        <h1>Borders</h1>
+                        <h2>Address:</h2><span id="BorderAddress"></span>
+                        <h2>Name:</h2> <span id="BorderName"></span>
+                        <h2>Owners:</h2> <span id="ListBorderOwners"></span>
+                        <h2>Token:</h2> <span id="TokenBorderAddress"></span>
+                        <h2>Balance:</h2> <span id="TokenBorderAddress"></span>
+                        <div class="contentTopics"></div>
+
+                            <h2>Transfer</h2>
+                                <div class="items">
+                                    <p class="contentTitle">To Adress:</p>
+                                    <input type="text" class="form-control" id="BorderTokenTransferAddress" placeholder="To Address" />
+                                    <p class="contentTitle">Amount:</p>
+                                    <input type="text" class="form-control" id="MovimentSetRatioShareTo" placeholder="Amount" />
+                                    <button class="btnDarkSmall" id="borderTokenTransferButton" type="button">Transfer</button>
+                                </div>
+
+                            <h2>Approve</h2>
+                                <div class="items">
+                                    <p class="contentTitle">To Adress:</p> <input type="text" class="form-control" id="BorderTokenApproveAddress" placeholder="To Address" />
+                                    <p class="contentTitle">Amount:</p> <input type="text" class="form-control" id="MovimentSetRatioShareTo" placeholder="Amount" />
+                                    <button class="btnDarkSmall" id="borderTokenApproveButton" type="button">Approve</button></p>
+                                    <div>
+                                        <p class="contentTitle">Events:</p> <span id="borderEventDepositUSD"></span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>      
+    </body>
+</html>

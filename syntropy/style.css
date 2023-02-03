@@ -1,0 +1,255 @@
+* {
+margin: 0;
+padding: 0;
+font-family: 'Antonio', sans-serif;
+font-family: 'Jura', sans-serif;
+}
+
+:root {
+    --lightColor: #fafafa;
+    --darkColor: #1E1E1E;
+    --highlightColor: #4DD60C;
+    --detailColor: #B8B8B8;
+    --pSizeDesk: 16px;
+    --h1SizeDesk: 48px;
+    --h2SizeDesk: 24px;
+    --h3SyzeDesk: 14px;
+}
+
+a {
+    font-size: var(--pSizeDesk);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+p + span {
+    font-size: var(--pSizeDesk);
+    color: var(--darkColor);
+    font-weight: 500;
+}
+
+span.highLight {
+    color: var(--highlightColor);
+    font-weight: 500;
+}
+
+h1 {
+    font-size: var(--h1SizeDesk);
+    color: var(--darkColor);
+}
+
+h2 {
+    font-size: var(--h2SizeDesk);
+    color: var(--darkColor);
+}
+
+body {
+    background-color: var(--lightBgColor);
+}
+
+header{
+    position: fixed;
+    background-color: var(--darkColor);
+    height: 100%;
+    width: 280px;
+}
+
+.logoNavBar {
+    display: flex;
+    justify-content: center;
+}
+.logoNavBar img{
+    height: 66px;
+    margin-top: 40px;
+
+}
+
+.navBar {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-content: space-between;
+}
+
+div#solUsd{
+    display: flex;
+}
+
+div#borderFactory{
+    display: none;
+}
+
+div#movimentFactory{
+    display: none;
+}
+
+div#moviments{
+    display: none;
+}
+
+div#borders{
+    display: none;
+}
+
+menu.menuNavBar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.navBar li {
+    list-style: none;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-left: 280px;
+    height: 100%;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+div.contentMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+div.contentUSD {
+    display: grid;
+    grid-template-columns: 90px 270px 270px 100px;
+    gap: 10px;
+}
+
+div.borderFactory {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.movimentFactory {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+p.contentTitle{
+    display: flex;
+    align-items: center;
+}
+
+div.moviments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+div.borders {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.contentMoviments {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+div.contentTopics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 90px 270px;
+    gap: 10px;
+}
+
+button.btnDarkSmall {
+    font-size: var(--pSizeDesk);
+    font-weight: 900;
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+    padding: 15px;
+    border-radius: 6px;
+    gap: 15px;
+    transition-duration: 0.3s;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+button.btnDarkSmall:hover {
+    background-color: var(--detailColor);
+}
+
+button.btnDarkSmall:active {
+    background-color: var(--highlightColor);
+}
+
+button.menu {
+    font-size: var(--pSizeDesk);
+    font-weight: 900;
+    background-color: var(--darkColor);
+    border: none;
+    color: var(--lightColor);
+    display: flex;
+    border-radius: 6px;
+    gap: 15px;
+    padding: 15px;
+    transition-duration: 0.3s;
+    width: 220px;
+}
+
+button.menu:hover {
+    -webkit-box-shadow:inset 0px 0px 0px 2px var(--lightColor);
+    -moz-box-shadow:inset 0px 0px 0px 2px var(--lightColor);
+    box-shadow:inset 0px 0px 0px 2px var(--lightColor);
+    color: var(--lightColor);
+}
+
+button.menuActive {
+    font-size: var(--pSizeDesk);
+    font-weight: 900;
+    border: none;
+    display: flex;
+    border-radius: 6px;
+    gap: 15px;
+    padding: 15px;
+    transition-duration: 0.3s;
+    width: 220px;
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}
+
+input[type=text] {
+    font-weight: 400;
+    font-size: var(--pSizeDesk);
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid var(--detailColor);
+    transition-duration: 0.3s;
+    outline: none;
+    width: 250px;
+}
+
+input[type=text]:hover {
+    border: 2px solid var(--darkColor);
+}
+
+input[type=text]:focus {
+    border: 2px solid var(--darkColor);
+    background-color: #eeeeee;
+    color: var(--darkColor);
+    font-weight: 700;
+}
